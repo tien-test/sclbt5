@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>soundcore Liberty 5 Pro / Pro Max – Product Card</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a14;
+    color: #fff;
+    width: 1400px;
+    padding: 20px;
+  }
+
+  /* Palette */
+  :root {
+    --bg:      #0a0a14;
+    --card:    #13131f;
+    --card2:   #0f0f1a;
+    --blue:    #0057FF;
+    --blue2:   #003ECC;
+    --gold:    #C9A84C;
+    --gold2:   #A07830;
+    --white:   #ffffff;
+    --muted:   #7a7a9a;
+    --border:  #1e1e32;
+    --red-card:#8B1A1A;
+  }
+
+  /* ── HEADER ROW ── */
+  .header-row {
+    display: grid;
+    grid-template-columns: 340px repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .brand-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--border);
+  }
+  .brand-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .brand-logo {
+    background: var(--blue);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+  }
+  .brand-sub { font-size: 11px; color: var(--muted); }
+  .brand-name {
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .brand-name span { color: var(--blue); }
+  .brand-name .gold { color: var(--gold); }
+  .brand-divider {
+    width: 32px; height: 2px;
+    background: var(--blue);
+    margin: 8px 0;
+  }
+  .brand-tagline { font-size: 10px; color: var(--muted); font-style: italic; }
+
+  .badge-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+  .badge-icon { font-size: 24px; }
+  .badge-title { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.3; }
+  .badge-sub { font-size: 10px; color: var(--muted); line-height: 1.3; }
+
+  /* ── MID ROW ── */
+  .mid-row {
+    display: grid;
+    grid-template-columns: 280px 1fr 300px;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  /* Left: AI highlight */
+  .ai-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--border);
+  }
+  .section-micro {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: var(--blue);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .ai-big { font-size: 44px; font-weight: 900; color: var(--blue); line-height: 1; margin-bottom: 6px; font-style: italic; }
+  .ai-sub { font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.3; }
+  .ai-desc { font-size: 11px; color: var(--muted); line-height: 1.65; }
+  .ai-pill {
+    margin-top: 14px;
+    background: rgba(0,87,255,0.12);
+    border: 1px solid rgba(0,87,255,0.3);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 10px;
+    color: #6699ff;
+    font-weight: 600;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  /* Center: product visual */
+  .product-card {
+    background: var(--card2);
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+  }
+  .product-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .model-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .model-box {
+    background: #0d0d1a;
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .model-box.promax { border-color: var(--gold2); }
+  .model-badge {
+    position: absolute;
+    top: -9px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .model-badge.blue { background: var(--blue); color: #fff; }
+  .model-badge.gold { background: var(--gold); color: #000; }
+  .model-emoji { font-size: 48px; display: block; margin: 8px 0 10px; }
+  .model-name { font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+  .model-screen { font-size: 10px; color: var(--muted); margin-bottom: 6px; }
+  .model-price {
+    font-size: 15px; font-weight: 900;
+    margin-top: 4px;
+  }
+  .model-price.blue { color: var(--blue); }
+  .model-price.gold { color: var(--gold); }
+
+  /* Right col */
+  .right-col { display: flex; flex-direction: column; gap: 12px; }
+
+  .launch-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 18px 18px;
+    border: 1px solid var(--border);
+    flex: 1;
+  }
+  .section-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .launch-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .launch-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .ldot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+  .launch-date { font-size: 20px; font-weight: 800; color: #fff; line-height: 1; }
+  .launch-desc { font-size: 10px; color: var(--muted); margin-top: 3px; }
+
+  .price-card {
+    background: linear-gradient(135deg, #003ACC 0%, #0055FF 100%);
+    border-radius: 14px;
+    padding: 18px 18px;
+  }
+  .price-label-text { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: rgba(255,255,255,0.7); text-transform: uppercase; margin-bottom: 6px; }
+  .price-range { font-size: 26px; font-weight: 900; color: #fff; line-height: 1; }
+  .price-note {
+    margin-top: 8px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    padding: 4px 10px;
+    display: inline-block;
+  }
+  .promo-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .promo-pill {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* ── BOTTOM ROW ── */
+  .bot-row {
+    display: grid;
+    grid-template-columns: 280px 1fr 300px;
+    gap: 12px;
+  }
+
+  .specs-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 18px 18px;
+    border: 1px solid var(--border);
+  }
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    border-bottom: 1px solid #191928;
+    font-size: 12px;
+  }
+  .spec-row:last-child { border-bottom: none; }
+  .sk { color: var(--muted); }
+  .sv { color: #fff; font-weight: 700; text-align: right; }
+
+  .features-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  .feat-item { display: flex; align-items: flex-start; gap: 12px; }
+  .feat-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: rgba(0,87,255,0.1);
+    border: 1px solid rgba(0,87,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+  .feat-title { font-size: 13px; font-weight: 700; color: #fff; }
+  .feat-desc { font-size: 10px; color: var(--muted); margin-top: 2px; line-height: 1.45; }
+
+  .buy-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+  .buy-icon { font-size: 28px; }
+  .buy-title { font-size: 18px; font-weight: 800; color: #fff; line-height: 1.3; }
+  .buy-title .blue { color: var(--blue); }
+  .buy-title .gold { color: var(--gold); }
+  .buy-btn {
+    background: var(--blue);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 9px 22px;
+    border-radius: 30px;
+    letter-spacing: 0.5px;
+  }
+  .buy-note { font-size: 9px; color: #444466; }
+  .tag-row { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; margin-top: 2px; }
+  .tag {
+    font-size: 9px;
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .tag.blue { background: rgba(0,87,255,0.15); color: #6699ff; border: 1px solid rgba(0,87,255,0.2); }
+  .tag.gold { background: rgba(201,168,76,0.15); color: var(--gold); border: 1px solid rgba(201,168,76,0.2); }
+</style>
+</head>
+<body>
+
+<!-- HEADER ROW -->
+<div class="header-row">
+  <div class="brand-card">
+    <div class="brand-logo-wrap">
+      <div class="brand-logo">soundcore</div>
+      <div class="brand-sub">by Anker</div>
+    </div>
+    <div class="brand-name">LIBERTY 5<br><span>PRO</span> / <span class="gold">PRO MAX</span></div>
+    <div class="brand-divider"></div>
+    <div class="brand-tagline">World's Clearest Earbuds · AI Chip Thus™</div>
+  </div>
+
+  <div class="badge-card">
+    <div class="badge-icon">🤖</div>
+    <div class="badge-title">AI Note-Taker<br>(Pro Max)</div>
+    <div class="badge-sub">Ghi âm + Transcript + Summary</div>
+  </div>
+  <div class="badge-card">
+    <div class="badge-icon">🌐</div>
+    <div class="badge-title">AI Dịch thuật<br>Real-time</div>
+    <div class="badge-sub">Cả 2 model · Trên tai nghe</div>
+  </div>
+  <div class="badge-card">
+    <div class="badge-icon">🔇</div>
+    <div class="badge-title">ANC 4.0<br>Adaptive</div>
+    <div class="badge-sub">384K+ tín hiệu/giây · 8 mic</div>
+  </div>
+  <div class="badge-card">
+    <div class="badge-icon">⚡</div>
+    <div class="badge-title">Sạc nhanh<br>5 phút = 4 giờ</div>
+    <div class="badge-sub">Pin 6.5H / 28H với hộp</div>
+  </div>
+</div>
+
+<!-- MID ROW -->
+<div class="mid-row">
+
+  <!-- Left: AI highlight -->
+  <div class="ai-card">
+    <div>
+      <div class="section-micro">Điểm nổi bật độc quyền</div>
+      <div class="ai-big">AI</div>
+      <div class="ai-sub">Chip Thus™<br>mạnh 150×</div>
+      <div class="ai-desc">Chip AI độc quyền của Anker xử lý hơn 384.000 tín hiệu âm thanh mỗi giây — chống ồn thông minh, đàm thoại siêu rõ ngay trong môi trường ồn 100dB+.</div>
+      <div class="ai-pill">Guinness World Records – Highest Speech Quality TWS 2026</div>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="section-micro" style="margin-bottom:6px;">USP chính</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="font-size:11px;color:#aaa;"><span style="color:#0088ff;font-weight:700;">01 </span>AI dịch thuật real-time</div>
+        <div style="font-size:11px;color:#aaa;"><span style="color:#0088ff;font-weight:700;">02 </span>Màn hình thông minh trên hộp sạc</div>
+        <div style="font-size:11px;color:#aaa;"><span style="color:#0088ff;font-weight:700;">03 </span>Record & Summary hội thoại / cuộc họp</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Center: 2 models -->
+  <div class="product-card">
+    <div class="product-label">So sánh hai phiên bản</div>
+    <div class="model-grid">
+
+      <div class="model-box">
+        <div class="model-badge blue">LIBERTY 5 PRO</div>
+        <span class="model-emoji">🎧</span>
+        <div class="model-name">Liberty 5 Pro</div>
+        <div class="model-screen">📱 Màn hình TFT 0.96" trên hộp sạc</div>
+        <div style="font-size:10px;color:#7a7a9a;margin-bottom:4px;">Đen · Xanh · Hồng · Trắng</div>
+        <div class="model-price blue">~4.500.000đ</div>
+        <div style="font-size:9px;color:#555577;margin-top:3px;">FSM +100.000đ</div>
+      </div>
+
+      <div class="model-box promax">
+        <div class="model-badge gold">PRO MAX</div>
+        <span class="model-emoji">🎧</span>
+        <div class="model-name">Liberty 5 Pro Max</div>
+        <div class="model-screen">✨ AMOLED 1.78" + AI Note-Taker</div>
+        <div style="font-size:10px;color:#7a7a9a;margin-bottom:4px;">Vàng Titanium · Đen</div>
+        <div class="model-price gold">~6.000.000đ</div>
+        <div style="font-size:9px;color:#555577;margin-top:3px;">FSM +400.000đ</div>
+      </div>
+
+    </div>
+    <div style="font-size:10px;color:#444466;text-align:center;">Cả 2 model: Driver 9.2mm · BT 6.1 · IP55 · HearID 5.0 · Multipoint · Dolby Atmos</div>
+  </div>
+
+  <!-- Right: Launch + Price -->
+  <div class="right-col">
+    <div class="launch-card">
+      <div class="section-label">Lịch mở bán</div>
+      <div class="launch-item">
+        <div class="ldot" style="background:#0057FF;"></div>
+        <div>
+          <div class="launch-date">20/06/2026</div>
+          <div class="launch-desc">Chính thức mở bán toàn hệ thống</div>
+        </div>
+      </div>
+      <div class="launch-item">
+        <div class="ldot" style="background:#C9A84C;"></div>
+        <div>
+          <div class="launch-date" style="font-size:16px;">10/06/2026</div>
+          <div class="launch-desc">1st Shipment về kho (1.000 cái)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-label-text">Phân khúc giá</div>
+      <div class="price-range">4,5 – 6 triệu</div>
+      <div class="price-note">Trả góp 0đ · Fund hỗ trợ 2,5%</div>
+      <div class="promo-row">
+        <div class="promo-pill">Pro Max: +400k FSM</div>
+        <div class="promo-pill">Pro: +100k FSM</div>
+        <div class="promo-pill">SVIP -3% + 300k</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM ROW -->
+<div class="bot-row">
+
+  <!-- Specs -->
+  <div class="specs-card">
+    <div class="section-label">Thông số kỹ thuật</div>
+    <div class="spec-row"><span class="sk">Driver</span><span class="sv">9.2mm Wool-Paper</span></div>
+    <div class="spec-row"><span class="sk">Bluetooth</span><span class="sv">6.1 · Multipoint 3 thiết bị</span></div>
+    <div class="spec-row"><span class="sk">Pin (ANC on)</span><span class="sv">6.5H / 28H (hộp sạc)</span></div>
+    <div class="spec-row"><span class="sk">ANC</span><span class="sv">Adaptive ANC 4.0</span></div>
+    <div class="spec-row"><span class="sk">Mic / VPU</span><span class="sv">8 Mics + 2 VPUs</span></div>
+    <div class="spec-row"><span class="sk">Trọng lượng</span><span class="sv">5.5g (tai nghe)</span></div>
+    <div class="spec-row"><span class="sk">Kháng nước</span><span class="sv">IP55</span></div>
+    <div class="spec-row"><span class="sk">EQ</span><span class="sv">HearID 5.0 + AI Sound</span></div>
+  </div>
+
+  <!-- Features -->
+  <div class="features-card">
+    <div class="section-label">Tính năng nổi bật</div>
+    <div class="feat-item">
+      <div class="feat-icon">🤖</div>
+      <div>
+        <div class="feat-title">AI Note-Taker (Pro Max độc quyền)</div>
+        <div class="feat-desc">Ghi âm cuộc họp trực tiếp từ hộp sạc → tự động transcript + tóm tắt điểm chính + action items. Quản lý qua app soundcore hoặc Web Portal "Ask Anka".</div>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-icon">🌐</div>
+      <div>
+        <div class="feat-title">AI Dịch thuật real-time</div>
+        <div class="feat-desc">Dịch thuật trực tiếp ngay trên tai nghe — phù hợp giao tiếp ngoại ngữ, họp quốc tế. Pro Max hỗ trợ thêm trên màn hình hộp sạc.</div>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-icon">📺</div>
+      <div>
+        <div class="feat-title">Màn hình thông minh trên hộp sạc</div>
+        <div class="feat-desc">Pro Max: AMOLED 1.78" · tùy chỉnh wallpaper · điều khiển ANC / EQ / Note-Taker ngay trên màn hình · không cần mở điện thoại.</div>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-icon">🔒</div>
+      <div>
+        <div class="feat-title">Bảo mật dữ liệu doanh nghiệp</div>
+        <div class="feat-desc">Mã hóa AES-256 cục bộ. Đạt chuẩn ISO 27001, SOC 2, HIPAA — phù hợp môi trường doanh nghiệp bảo mật cao.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buy CTA -->
+  <div class="buy-card">
+    <div class="buy-icon">🛍️</div>
+    <div class="buy-title">Mua ngay tại<br><span class="blue">CellphoneS</span></div>
+    <div class="tag-row">
+      <div class="tag blue">Liberty 5 Pro</div>
+      <div class="tag gold">Liberty 5 Pro Max</div>
+    </div>
+    <div class="buy-btn">cellphones.com.vn</div>
+    <div style="font-size:10px;color:#7a7a9a;text-align:center;">Kênh: Zalo OA · Zalo Push<br>Web/App Push</div>
+    <div class="buy-note">Chính hãng · Trả góp 0đ · Bảo hành 12 tháng</div>
+  </div>
+
+</div>
+
+</body>
+</html>
